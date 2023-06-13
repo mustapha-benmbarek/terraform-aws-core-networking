@@ -4,7 +4,7 @@ variable "core-vpc-subnets" {
     region            = optional(string)
     name              = string
     cidr-block-ipv4   = string
-    cidr-block-ipv6   = optional(bool, false)
+    cidr-block-ipv6   = optional(string, "")
     availability-zone = string
     vpc-name          = string
   }))
