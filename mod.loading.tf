@@ -10,7 +10,9 @@ locals {
   data-vpc-dhcp-option-sets              = try(jsondecode(file(var.file-vpc-dhcp-option-sets)), [])
   data-vpc-managed-prefix-lists          = try(jsondecode(file(var.file-vpc-managed-prefix-lists)), [])
   data-vpc-peerings                      = try(jsondecode(file(var.file-vpc-peerings)), [])
-
+  data-placement-groups                  = try(jsondecode(file(var.file-placement-groups)), [])
+  data-vpn-customer-gateways             = try(jsondecode(file(var.file-vpn-customer-gateways)), [])
+  data-vpn-virtual-private-gateways      = try(jsondecode(file(var.file-vpn-virtual-private-gateways)), [])
 }
 
 /*Data decoding...*/
@@ -25,4 +27,7 @@ locals {
   lst-vpc-dhcp-option-sets              = try({ for obj in local.data-vpc-dhcp-option-sets.dhcp-option-sets : obj.name => obj }, tomap({}))
   lst-vpc-managed-prefix-lists          = try({ for obj in local.data-vpc-managed-prefix-lists.managed-prefix-lists : obj.name => obj }, tomap({}))
   lst-vpc-peerings                      = try({ for obj in local.data-vpc-peerings.peerings : obj.name => obj }, tomap({}))
+  lst-placement-groups                  = try({ for obj in local.data-placement-groups.placement-groups : obj.name => obj }, tomap({}))
+  lst-vpn-customer-gateways             = try({ for obj in local.data-vpn-customer-gateways.customer-gateways : obj.name => obj }, tomap({}))
+  lst-vpn-virtual-private-gateways      = try({ for obj in local.data-vpn-virtual-private-gateways.virtual-private-gateways : obj.name => obj }, tomap({}))
 }

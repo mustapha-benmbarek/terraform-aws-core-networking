@@ -9,3 +9,6 @@ variable "file-vpc-nat-gateways" { default = "" }
 variable "file-vpc-dhcp-option-sets" { default = "" }
 variable "file-vpc-managed-prefix-lists" { default = "" }
 variable "file-vpc-peerings" { default = "" }
+variable "file-placement-groups" { default = "" }
+variable "file-vpn-customer-gateways" { default = "" }
+variable "file-vpn-virtual-private-gateways" { default = "" }

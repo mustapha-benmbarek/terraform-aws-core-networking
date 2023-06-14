@@ -51,3 +51,22 @@ module "vpc-managed-prefix-lists" {
   source                        = "./modules/vpc-managed-prefix-list"
   core-vpc-managed-prefix-lists = local.lst-vpc-managed-prefix-lists
 }
+
+/*Networking Module | Placement Group*/
+module "placement-groups" {
+  source                = "./modules/placement-group"
+  core-placement-groups = local.lst-placement-groups
+}
+
+/*Networking Module | VPN Virtual Private Gateway*/
+module "vpn-virtual-private-gateways" {
+  source                            = "./modules/vpn-virtual-private-gateway"
+  core-vpn-virtual-private-gateways = local.lst-vpn-virtual-private-gateways
+}
+
+/*Networking Module | VPN Customer Gateway*/
+module "vpn-customer-gateways" {
+  source                     = "./modules/vpn-customer-gateway"
+  core-vpn-customer-gateways = local.lst-vpn-customer-gateways
+}
+
