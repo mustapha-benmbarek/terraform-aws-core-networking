@@ -61,6 +61,7 @@ module "placement-groups" {
 /*Networking Module | VPN Virtual Private Gateway*/
 module "vpn-virtual-private-gateways" {
   source                            = "./modules/vpn-virtual-private-gateway"
+  core-vpcs                         = module.vpcs.ids
   core-vpn-virtual-private-gateways = local.lst-vpn-virtual-private-gateways
 }
 
@@ -69,4 +70,3 @@ module "vpn-customer-gateways" {
   source                     = "./modules/vpn-customer-gateway"
   core-vpn-customer-gateways = local.lst-vpn-customer-gateways
 }
-
