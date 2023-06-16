@@ -1,3 +1,4 @@
+/*Resource creation: Elastic IP Address*/
 resource "aws_eip" "this" {
   for_each             = var.core-vpc-elastic-ips
   network_border_group = each.value.network-border-group

@@ -1,3 +1,4 @@
+/*Resource creation: DHCP Option Set*/
 resource "aws_vpc_dhcp_options" "this" {
   for_each             = var.core-vpc-dhcp-option-sets
   domain_name          = each.value.domain-name
@@ -10,6 +11,7 @@ resource "aws_vpc_dhcp_options" "this" {
   }
 }
 
+/*Resource association: DHCP Option Set*/
 resource "aws_vpc_dhcp_options_association" "this_association" {
   for_each        = var.core-vpc-dhcp-option-sets
   vpc_id          = var.core-vpcs[each.value.vpc-name].id

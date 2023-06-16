@@ -1,3 +1,4 @@
+/*Resource creation: Managed Prefix List*/
 resource "aws_ec2_managed_prefix_list" "this" {
   for_each       = var.core-vpc-managed-prefix-lists
   name           = each.value.name

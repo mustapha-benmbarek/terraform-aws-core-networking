@@ -1,3 +1,4 @@
+/*Resource creation: Virtual Private Cloud (VPC)*/
 resource "aws_vpc" "this" {
   for_each                         = var.core-vpcs
   cidr_block                       = each.value.cidr-block-ipv4

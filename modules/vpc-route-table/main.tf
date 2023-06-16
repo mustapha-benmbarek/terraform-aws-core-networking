@@ -1,4 +1,4 @@
-
+/*Resource creation: Route Table*/
 resource "aws_route_table" "this" {
   for_each = var.core-vpc-managed-prefix-lists
   name     = each.value.name

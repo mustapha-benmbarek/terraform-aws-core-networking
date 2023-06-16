@@ -1,3 +1,4 @@
+/*Resource creation: Network Address Translation (NAT) Gateway*/
 resource "aws_nat_gateway" "this" {
   for_each          = var.core-vpc-nat-gateways
   subnet_id         = var.core-vpc-subnets[each.value.subnet-name].id

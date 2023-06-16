@@ -1,3 +1,4 @@
+/*Resource creation: VPC Peering Connectiony*/
 resource "aws_vpc_peering_connection" "this" {
   for_each      = var.core-vpc-peerings
   vpc_id        = var.core-vpcs[each.value.requester-vpc-name].id

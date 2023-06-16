@@ -1,3 +1,4 @@
+/*Resource creation: VPN Virtual Private Gateway*/
 resource "aws_vpn_gateway" "this" {
   for_each        = var.core-vpn-virtual-private-gateways
   amazon_side_asn = each.value.asn

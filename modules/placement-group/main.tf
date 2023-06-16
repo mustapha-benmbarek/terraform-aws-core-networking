@@ -1,3 +1,4 @@
+/*Resource creation: EC2 Placement Group*/
 resource "aws_placement_group" "this" {
   for_each = var.core-placement-groups
   name     = each.value.name

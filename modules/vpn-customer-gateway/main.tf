@@ -1,3 +1,4 @@
+/*Resource creation: VPN Customer Gateway*/
 resource "aws_customer_gateway" "this" {
   for_each   = var.core-vpn-customer-gateways
   type       = each.value.type

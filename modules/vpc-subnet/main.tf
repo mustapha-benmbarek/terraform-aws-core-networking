@@ -1,3 +1,4 @@
+/*Resource creation: Virtual Subnet*/
 resource "aws_subnet" "this" {
   for_each          = var.core-vpc-subnets
   vpc_id            = var.core-vpcs[each.value.vpc-name].id
