@@ -3,5 +3,6 @@ variable "core-placement-groups" {
     region   = optional(string)
     name     = string
     strategy = string
+    partitions = optional(number)
   }))
 }
