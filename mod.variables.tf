@@ -15,3 +15,8 @@ variable "file-vpc-endpoint-services" { default = "" }
 variable "file-placement-groups" { default = "" }
 variable "file-vpn-customer-gateways" { default = "" }
 variable "file-vpn-virtual-private-gateways" { default = "" }
+
+variable "file-r53-public-hosted-zones" { default = "" }
+variable "file-r53-private-hosted-zones" { default = "" }
+variable "file-r53-public-records" { default = "" }
+variable "file-r53-private-records" { default = "" }

@@ -70,3 +70,16 @@ module "vpn-customer-gateways" {
   source                     = "./modules/vpn-customer-gateway"
   core-vpn-customer-gateways = local.lst-vpn-customer-gateways
 }
+
+/*Networking Module | Route 53 Public Hosted Zone*/
+module "r53-public-hosted-zones" {
+  source                       = "./modules/r53-public-hosted-zones"
+  core-r53-public-hosted-zones = local.lst-r53-public-hosted-zones
+}
+
+/*Networking Module | Route 53 Private Hosted Zone*/
+module "r53-private-hosted-zones" {
+  source                        = "./modules/r53-private-hosted-zones"
+  core-vpcs                     = module.vpcs.ids
+  core-r53-private-hosted-zones = local.lst-r53-private-hosted-zones
+}
