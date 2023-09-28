@@ -15,10 +15,8 @@ locals {
   data-vpn-virtual-private-gateways      = try(jsondecode(file(var.file-vpn-virtual-private-gateways)), [])
   data-r53-public-hosted-zones           = try(jsondecode(file(var.file-r53-public-hosted-zones)), [])
   data-r53-private-hosted-zones          = try(jsondecode(file(var.file-r53-private-hosted-zones)), [])
-
-  //TO FINISH
-  data-r53-public-records   = try(jsondecode(file(var.file-r53-public-records)), [])
-  data-r53-private-records  = try(jsondecode(file(var.file-r53-private-records)), [])
+  //data-r53-public-records   = try(jsondecode(file(var.file-r53-public-records)), [])
+  //data-r53-private-records  = try(jsondecode(file(var.file-r53-private-records)), [])
   data-r53-cidr-collections = try(jsondecode(file(var.file-r53-cidr-collections)), [])
   data-r53-cidr-locations   = try(jsondecode(file(var.file-r53-cidr-locations)), [])
 }
@@ -40,10 +38,8 @@ locals {
   lst-vpn-virtual-private-gateways      = try({ for obj in local.data-vpn-virtual-private-gateways.virtual-private-gateways : obj.name => obj }, tomap({}))
   lst-r53-public-hosted-zones           = try({ for obj in local.data-r53-public-hosted-zones.public-hosted-zones : obj.name => obj }, tomap({}))
   lst-r53-private-hosted-zones          = try({ for obj in local.data-r53-private-hosted-zones.private-hosted-zones : obj.name => obj }, tomap({}))
-
-  //TO FINISH
-  lst-r53-public-records   = try({ for obj in local.data-r53-public-records.public-records : obj.name => obj }, tomap({}))
-  lst-r53-private-records  = try({ for obj in local.data-r53-private-records.private-records : obj.name => obj }, tomap({}))
+  //lst-r53-public-records   = try({ for obj in local.data-r53-public-records.public-records : obj.name => obj }, tomap({}))
+  //lst-r53-private-records  = try({ for obj in local.data-r53-private-records.private-records : obj.name => obj }, tomap({}))
   lst-r53-cidr-collections = try({ for obj in local.data-r53-cidr-collections.cidr-collections : obj.name => obj }, tomap({}))
   lst-r53-cidr-locations   = try({ for obj in local.data-r53-cidr-locations.cidr-locations : obj.name => obj }, tomap({}))
 }
