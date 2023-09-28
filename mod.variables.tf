@@ -20,3 +20,5 @@ variable "file-r53-public-hosted-zones" { default = "" }
 variable "file-r53-private-hosted-zones" { default = "" }
 variable "file-r53-public-records" { default = "" }
 variable "file-r53-private-records" { default = "" }
+variable "file-r53-cidr-collections" { default = "" }
+variable "file-r53-cidr-locations" { default = "" }

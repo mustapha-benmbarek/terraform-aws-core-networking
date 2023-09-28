@@ -83,3 +83,16 @@ module "r53-private-hosted-zones" {
   core-vpcs                     = module.vpcs.ids
   core-r53-private-hosted-zones = local.lst-r53-private-hosted-zones
 }
+
+/*Networking Module | Route 53 CIDR Collection*/
+module "r53-cidr-collections" {
+  source                    = "./modules/r53-cidr-collections"
+  core-r53-cidr-collections = local.lst-r53-cidr-collections
+}
+
+/*Networking Module | Route 53 CIDR Location*/
+module "r53-cidr-locations" {
+  source                    = "./modules/r53-cidr-locations"
+  core-r53-cidr-collections = module.r53-cidr-collections.ids
+  core-r53-cidr-locations   = local.lst-r53-cidr-locations
+}
